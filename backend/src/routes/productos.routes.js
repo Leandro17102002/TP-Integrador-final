@@ -8,6 +8,9 @@ import {
     eliminarProducto
 } from "../controllers/productos.controller.js";
 
+import esAdmin from "../middlewares/admin.middleware.js";
+import verificarToken from "../middlewares/auth.middleware.js";
+
 const router = Router();
 
 // GET todos los productos
@@ -17,12 +20,21 @@ router.get("/", getProductos);
 router.get("/:id", getProductoById);
 
 // POST crear un producto
-router.post("/", crearProducto);
+router.post("/", 
+    verificarToken,
+    esAdmin,
+    crearProducto);
 
 // PUT actualizar un producto
-router.put("/:id", actualizarProducto);
+router.put("/:id", 
+    verificarToken,
+    esAdmin,
+    actualizarProducto);
 
 // DELETE eliminar un producto
-router.delete("/:id", eliminarProducto);
+router.delete("/:id", 
+    verificarToken,
+    esAdmin,
+    eliminarProducto);
 
 export default router;
