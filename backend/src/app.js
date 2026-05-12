@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 
 import productosRoutes from "./routes/productos.routes.js";
+import authRoutes from "./routes/auth.routes.js"; 
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.get("/", (req, res) => {
   res.send("API funcionando 🚀");
 });
 
-app.use("/api", productosRoutes);
+app.use("/api/productos", productosRoutes);
+app.use("/api/auth", authRoutes);
 
 export default app;

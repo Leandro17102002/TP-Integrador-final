@@ -50,7 +50,7 @@ export const login = async (req, res) => {
 
         if(!usuario) {
             return res.status(400).json({
-                message: "Usuario no encontrado"
+                message: "Credenciales invalidas"
             });
         }
 

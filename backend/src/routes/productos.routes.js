@@ -11,18 +11,18 @@ import {
 const router = Router();
 
 // GET todos los productos
-router.get("/productos", getProductos);
+router.get("/", getProductos);
 
 // GET producto por ID
-router.get("/productos/:id", getProductoById);
+router.get("/:id", getProductoById);
 
 // POST crear un producto
-router.post("/productos", crearProducto);
+router.post("/", crearProducto);
 
 // PUT actualizar un producto
-router.put("/productos/:id", actualizarProducto);
+router.put("/:id", actualizarProducto);
 
 // DELETE eliminar un producto
-router.delete("/productos/:id", eliminarProducto);
+router.delete("/:id", eliminarProducto);
 
 export default router;
