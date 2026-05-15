@@ -3,6 +3,7 @@ import cors from "cors";
 
 import productosRoutes from "./routes/productos.routes.js";
 import authRoutes from "./routes/auth.routes.js"; 
+import carritoRoutes from "./routes/carrito.routes.js";
 
 const app = express();
 
@@ -15,5 +16,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/productos", productosRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/carrito", carritoRoutes);
+
 
 export default app;
