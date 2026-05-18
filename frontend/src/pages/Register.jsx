@@ -24,7 +24,7 @@ function Register() {
 
         try {
             const response = await fetch(
-                'http://localhost:3000/api/auth/register',
+                'https://proyecto-final-backend-production-4672.up.railway.app/api/auth/register',
                 {
                     method: 'POST',
                     headers: {
@@ -66,7 +66,7 @@ function Register() {
                 backgroundColor: 'white'
             }}
             >
-                
+
                 <div className="card-body p-5">
 
                     {/* TITULO */}

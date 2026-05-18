@@ -21,7 +21,7 @@ function Admin() {
 
     const obtenerProductos = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/productos');
+            const response = await fetch('https://proyecto-final-backend-production-4672.up.railway.app/api/productos');
 
             const data = await response.json();
 
@@ -36,7 +36,7 @@ function Admin() {
             const token = localStorage.getItem('token');
 
             const response = await fetch (
-                `http://localhost:3000/api/productos/${id}`,
+                `https://proyecto-final-backend-production-4672.up.railway.app/api/productos/${id}`,
                 {
                     method: 'DELETE',
                     headers: {
@@ -92,8 +92,8 @@ function Admin() {
 
             const response = await fetch(
                 editandoId
-                    ? `http://localhost:3000/api/productos/${editandoId}`
-                    : 'http://localhost:3000/api/productos',
+                    ? `https://proyecto-final-backend-production-4672.up.railway.app/api/productos/${editandoId}`
+                    : 'https://proyecto-final-backend-production-4672.up.railway.app/api/productos',
                 {
                     method: editandoId ? 'PUT' : 'POST',
                     headers: {
@@ -107,7 +107,7 @@ function Admin() {
             const data = await response.json();
             console.log(data);
 
-            alert('Producto creado exitosamente');
+            alert(editandoId ? 'Producto actualizado' : 'Producto creado exitosamente');
 
             setFormData({
 
@@ -115,8 +115,8 @@ function Admin() {
                 imagen: '',
                 descripcion: '',
                 categoria: '',
-                precio: 0,
-                stock: 0
+                precio: parseFloat(formData.precio) || 0,
+                stock: parseInt(formData.stock) || 0
             });
 
             setEditandoId(null);

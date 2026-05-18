@@ -21,7 +21,7 @@ function Carrito(){
             }));
 
             const response = await fetch(
-                'http://localhost:3000/api/carrito',
+                'https://proyecto-final-backend-production-4672.up.railway.app/api/carrito',
 
                 {
                     method: 'POST',
@@ -103,7 +103,7 @@ function Carrito(){
                             {
                                 carrito.map((item) => (
                                     <div 
-                                    key={item.producto}
+                                    key={item._id ||item.producto}
                                     className="card border-0 mb-4"
                                     style={{
                                         borderRadius: '25px',
@@ -172,7 +172,7 @@ function Carrito(){
                         <div className="col-lg-4">
 
                             <div
-                            className="card-border"
+                            className="card border-0"
                             style={{
                                 borderRadius:'25px',
                                 backgroundColor:'white',

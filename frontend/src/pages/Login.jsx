@@ -29,7 +29,7 @@ function Login() {
 
         try {
             const response = await fetch (
-                "http://localhost:3000/api/auth/login",
+                "https://proyecto-final-backend-production-4672.up.railway.app/api/auth/login",
                 {
                     method: 'POST',
 

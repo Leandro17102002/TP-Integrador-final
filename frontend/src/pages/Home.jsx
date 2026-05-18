@@ -16,7 +16,7 @@ function Home() {
     const obtenerProductos = async() => {
         try{
             const response = await fetch (
-                'http://localhost:3000/api/productos',
+                'https://proyecto-final-backend-production-4672.up.railway.app/api/productos',
             );
 
             const data = await response.json();
