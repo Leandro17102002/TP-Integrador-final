@@ -15,7 +15,7 @@ export const getProductoById = async (req, res) => {
     try{
         const producto = await Producto.findById(req.params.id);
         if(!producto){
-            return res.status(404).json({message: "Producto no encontrado", error});
+            return res.status(404).json({message: "Producto no encontrado"});
         }
         res.json(producto);
     } catch (error) {
@@ -41,7 +41,7 @@ export const actualizarProducto = async (req, res) => {
         const productoActualizado = await Producto.findByIdAndUpdate(req.params.id, req.body, {new: true})
         
         if(!productoActualizado){
-            return res.status(404).json({message: "Producto no encontrado", error})
+            return res.status(404).json({message: "Producto no encontrado"})
         }
         res.json(productoActualizado);
     } catch (error) {
@@ -55,7 +55,7 @@ export const eliminarProducto = async(req, res) => {
     try {
         const productoEliminado = await Producto.findByIdAndDelete(req.params.id);
         if (!productoEliminado) {
-            return res.status(404).json({message: "Producto no encontrado" , error})
+            return res.status(404).json({message: "Producto no encontrado"})
         }
         res.json({message: "Producto eliminado correctamente"});
     } catch (error) {
